@@ -20,6 +20,7 @@ SITE = "https://abroadstudy.co.kr"
 PHONE, PHONE_TEL = "010-8241-2051", "01082412051"
 
 NAV = [
+    ("winter", "겨울방학", "WINTER"),
     ("programs", "커리큘럼", "CURRICULUM"),
     ("process", "수업 진행", "PROCESS"),
     ("teachers", "코치진", "COACH"),
@@ -123,7 +124,7 @@ APPLY = f"""
           <option value="">선택</option>
           <option>IB (MYP · DP)</option><option>AP</option><option>IGCSE · A-Level</option><option>SAT · 공인시험</option>
           <option>국제학교 수학</option><option>영어 에세이 · 리서치</option><option>영어 토론 · 발표 (MUN)</option>
-          <option>미국교과서 · 과학</option><option>편입 · 유학 준비</option><option>아직 정하지 못했어요</option>
+          <option>미국교과서 · 과학</option><option>편입 · 유학 준비</option><option>겨울방학 집중</option><option>아직 정하지 못했어요</option>
         </select>
       </label>
       <label>재학 중인 학교<input name="school"></label>
