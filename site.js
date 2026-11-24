@@ -16,7 +16,24 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu
 
 // 학교 이름 흐름띠: 끊김 없이 돌도록 한 번 복제
 const track = document.getElementById('track');
-track.innerHTML += track.innerHTML;
+if (track) track.innerHTML += track.innerHTML;
+
+// 코치 · FAQ 분류 버튼 (data-f 버튼이 data-c 항목을 걸러냄)
+const setupFilter = (barId, itemSel) => {
+  const bar = document.getElementById(barId);
+  if (!bar) return;
+  bar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    bar.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+    const f = btn.dataset.f;
+    document.querySelectorAll(itemSel).forEach(el => {
+      el.hidden = f !== 'all' && !el.dataset.c.split(' ').includes(f);
+    });
+  });
+};
+setupFilter('coachFilter', '.coach[data-c]');
+setupFilter('faqCats', '#faqList details');
 
 // 지역별 학교 탭
 const SCHOOLS = {
@@ -31,6 +48,7 @@ const SCHOOLS = {
 };
 const tabs = document.getElementById('tabs');
 const panel = document.getElementById('panel');
+if (tabs && panel) {
 const showRegion = (name) => {
   tabs.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.textContent === name));
   panel.innerHTML = `<h3>${name}</h3><div class="chips">${SCHOOLS[name].map(s => `<span>${s}</span>`).join('')}</div>`;
@@ -42,6 +60,7 @@ Object.keys(SCHOOLS).forEach(name => {
   tabs.appendChild(b);
 });
 showRegion(Object.keys(SCHOOLS)[0]);
+}
 
 // 상담 신청
 const form = document.getElementById('applyForm');

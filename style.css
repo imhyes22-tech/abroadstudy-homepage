@@ -221,3 +221,92 @@ footer a:hover{color:var(--y)}
   .bar .btn{flex:1;padding:10px 10px;font-size:14px;white-space:nowrap}
   .bar .t{display:none}
 }
+
+/* ===== 하위 페이지 ===== */
+.menu a.on{color:var(--y)}
+.page-hero{position:relative;background:var(--ink);color:#c5ccdb;padding:150px 0 90px;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 15% 0%,rgba(255,212,0,.12),transparent 70%),
+  linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px,
+  linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px;
+  -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+.page-hero .wrap{position:relative;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+.page-hero .eyebrow{color:var(--y);font-weight:700;font-size:14px;letter-spacing:.06em}
+.page-hero h1{font-family:var(--display);font-weight:400;color:#fff;font-size:clamp(40px,6vw,64px);line-height:1.12;margin:12px 0 0}
+.page-hero h1 span{color:var(--y)}
+.page-hero p.lead{margin:20px 0 0;font-size:17px;max-width:560px}
+.page-hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.page-hero .tags span{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#e3e8f0}
+.page-hero .hero-btns{justify-content:flex-start}
+.side{background:rgba(255,255,255,.04);border:1px solid var(--line-d);border-radius:20px;padding:30px}
+.side h3{color:#fff;font-size:18px;font-weight:800;margin-bottom:16px}
+.side ol{margin:0;padding:0;list-style:none;counter-reset:n;display:grid;gap:12px}
+.side li{counter-increment:n;display:flex;gap:12px;align-items:flex-start;color:#d5dbe6;font-size:15px}
+.side li::before{content:counter(n);flex:none;width:24px;height:24px;border-radius:50%;background:var(--y);color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:2px}
+
+/* 다른 안내 */
+.more{padding:90px 0}
+.more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.more-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;transition:border-color .2s,transform .2s}
+.more-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.more-card small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;color:#b39200}
+.more-card b{display:block;margin-top:6px;font-size:17px;color:var(--ink)}
+.more-card i{position:absolute;right:18px;top:20px;color:var(--muted);font-size:18px}
+
+/* 3단계 프로그램 */
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stage{background:var(--ink);color:#c5ccdb;border-radius:20px;padding:30px}
+.stage b{font-family:var(--display);font-weight:400;color:var(--y);font-size:15px;letter-spacing:.06em}
+.stage h3{color:#fff;font-size:21px;font-weight:800;margin:10px 0 8px}
+.stage p{margin:0;font-size:15px}
+
+/* 세로 타임라인 */
+.timeline{max-width:880px;margin:0 auto;position:relative}
+.timeline::before{content:"";position:absolute;left:31px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.tl{position:relative;display:grid;grid-template-columns:64px 1fr;gap:22px;margin-bottom:20px}
+.tl .no{width:64px;height:64px;border-radius:18px;background:var(--ink);color:var(--y);display:grid;place-items:center;font-family:var(--display);font-size:22px;position:relative;z-index:1}
+.tl .box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 26px}
+.tl h3{font-size:20px;font-weight:800}
+.tl p{margin:6px 0 12px;color:var(--muted)}
+.tl .chk{display:flex;flex-wrap:wrap;gap:8px}
+.tl .chk span{background:var(--y-soft);color:#6b5600;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
+
+/* 코치 상세 */
+.filter{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:30px}
+.filter button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line-d);background:transparent;color:#c5ccdb;padding:8px 16px;border-radius:999px;cursor:pointer}
+.filter button.on{background:var(--y);border-color:var(--y);color:var(--ink);font-weight:800}
+.coach .tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.coach .tagrow span{font-size:12px;font-weight:600;border:1px solid var(--line-d);color:#aeb7c8;padding:3px 10px;border-radius:6px}
+.coach[hidden]{display:none}
+
+/* 혜택 카드 · 안내 박스 */
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:40px auto 0}
+.band{max-width:960px;margin:40px auto 0;background:var(--y);border-radius:22px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.band h3{font-family:var(--display);font-weight:400;font-size:28px}
+.band p{margin:6px 0 0;color:#4a3f00}
+.empty{max-width:720px;margin:0 auto;text-align:center;background:#fff;border:1px dashed #cfd5df;border-radius:22px;padding:56px 30px}
+.empty i{font-size:44px;color:#c9a300}
+.empty h3{font-size:22px;font-weight:800;margin:12px 0 8px}
+.empty p{color:var(--muted);margin:0 0 22px}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:860px;margin:0 auto}
+.checks div{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-weight:600;color:var(--ink)}
+.checks i{color:#c9a300;font-size:22px}
+.faq-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:26px}
+.faq-cats button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--text);padding:8px 16px;border-radius:999px;cursor:pointer}
+.faq-cats button.on{background:var(--ink);border-color:var(--ink);color:var(--y)}
+.faq details[hidden]{display:none}
+.sec-link{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-weight:700;color:var(--ink);border-bottom:2px solid var(--y)}
+
+@media (max-width:1000px){
+  .page-hero .wrap{grid-template-columns:1fr;gap:36px}
+  .more-grid{grid-template-columns:repeat(2,1fr)}
+  .stages,.perks{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .page-hero{padding:120px 0 64px}
+  .checks{grid-template-columns:1fr}
+  .tl{grid-template-columns:48px 1fr;gap:14px}
+  .tl .no{width:48px;height:48px;font-size:17px;border-radius:14px}
+  .timeline::before{left:23px}
+  .band{padding:28px 24px}
+}
